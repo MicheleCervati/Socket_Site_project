@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Differenze TCP/UDP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="style.css" type="stylesheet">
+    <link rel="icon" type="image/png" href="img/logo.png">
+  </head>
+  <body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top shadow">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Logo" style="width:40px;" class="rounded-pill"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="socket.html">Socket</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ISO_OSI.html">ISO/OSI</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="Differenze_TCP_UDP.html">Protocolli</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Glossario.html" id="tcpUdpLink">Glossario</a>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Body Content -->
+    <div class="container my-5 pt-5">
+      <!-- Titolo principale -->
+      <div class="text-center my-5">
+        <h1 class="display-4 text-primary fw-bold">Differenze tra TCP e UDP</h1>
+        <p class="lead">Scopri le caratteristiche e i casi d'uso dei protocolli TCP e UDP.</p>
+      </div>
+
+      <!-- Sezione 1: Protocollo TCP -->
+      <div class="row align-items-center mb-5 py-4">
+        <div class="col-md-6">
+          <img src="img/tcpgif.gif" class="img-fluid rounded shadow" alt="3-Way Handshake">
+        </div>
+        <div class="col-md-6">
+          <h2 class="mb-3 text-primary">Protocollo TCP: Affidabilità e Connessione</h2>
+          <p>
+            Il <strong>Transmission Control Protocol</strong> (TCP) è un protocollo orientato alla connessione, il che significa che stabilisce una connessione affidabile prima di trasferire i dati. Questo processo è noto come <strong>3-Way Handshake</strong>:
+          </p>
+          <ol>
+            <li>Il client invia un pacchetto <strong>SYN</strong> al server per iniziare la connessione.</li>
+            <li>Il server risponde con un pacchetto <strong>SYN-ACK</strong>.</li>
+            <li>Il client conferma con un pacchetto <strong>ACK</strong>, completando il processo.</li>
+          </ol>
+          <p>
+            Una volta stabilita la connessione, TCP garantisce che i dati arrivino in ordine e senza errori, grazie a meccanismi come il controllo degli errori e la ritrasmissione dei pacchetti persi. Questo lo rende ideale per applicazioni che richiedono alta affidabilità, come la navigazione web o il trasferimento di file.
+          </p>
+        </div>
+      </div>
+
+      <!-- Sezione 2: Protocollo UDP -->
+      <div class="row align-items-center mb-5 py-4 flex-md-row-reverse">
+        <div class="col-md-6">
+          <img src="img/udpExplanation.jpg" class="img-fluid rounded shadow" alt="UDP Explanation">
+        </div>
+        <div class="col-md-6">
+          <h2 class="mb-3 text-primary">Protocollo UDP: Velocità e Semplicità</h2>
+          <p>
+            L'<strong>User Datagram Protocol</strong> (UDP) è un protocollo senza connessione, il che significa che non stabilisce una connessione affidabile prima di trasferire i dati. I dati vengono inviati sotto forma di datagrammi senza garanzie di consegna o ordine. Questo lo rende molto più veloce rispetto al TCP, ma meno affidabile.
+          </p>
+          <p>
+            UDP supporta varie modalità di trasmissione:
+            <ul>
+              <li><strong>Unicast</strong>: Dati inviati a un singolo destinatario.</li>
+              <li><strong>Multicast</strong>: Dati inviati a un gruppo specifico di destinatari.</li>
+              <li><strong>Broadcast</strong>: Dati inviati a tutti i dispositivi sulla rete.</li>
+            </ul>
+            Grazie alla sua velocità, UDP è spesso utilizzato per applicazioni che non richiedono affidabilità completa, come lo streaming video o i giochi online.
+          </p>
+        </div>
+      </div>
+
+      <!-- Sezione 3: Quando usare TCP o UDP -->
+      <div class="row align-items-center mb-5 py-4">
+        <div class="col-md-6">
+          <img src="img/tcpOrUdp.png" class="img-fluid rounded shadow" alt="TCP or UDP">
+        </div>
+        <div class="col-md-6">
+          <h2 class="mb-3 text-primary">Quando usare TCP e quando UDP?</h2>
+          <p>
+            La scelta tra TCP e UDP dipende dal tipo di applicazione e dalle esigenze specifiche:
+          </p>
+          <ul>
+            <li><strong>TCP</strong>: Ideale per applicazioni che richiedono affidabilità e integrità dei dati. Esempi includono:
+              <ul>
+                <li>HTTP/HTTPS per la navigazione web.</li>
+                <li>SMTP per l'invio di email.</li>
+                <li>FTP per il trasferimento di file.</li>
+              </ul>
+            </li>
+            <li><strong>UDP</strong>: Preferito per applicazioni che richiedono velocità e tollerano una perdita minima di dati. Esempi includono:
+              <ul>
+                <li>Streaming video e audio (es. YouTube, Netflix).</li>
+                <li>Giochi online in tempo reale.</li>
+                <li>VoIP per chiamate vocali.</li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            Entrambi i protocolli hanno i loro punti di forza e vengono scelti in base alle necessità dell'applicazione.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="mb-3">Collegamenti Rapidi</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+              <li><a href="socket.html" class="text-white text-decoration-none">Socket</a></li>
+              <li><a href="ISO_OSI.html" class="text-white text-decoration-none">ISO/OSI</a></li>
+              <li><a href="Differenze_TCP_UDP.html" class="text-white text-decoration-none">Protocolli</a></li>
+              <li><a href="Glossario.html" class="text-white text-decoration-none">Glossario</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 text-center">
+            <img src="img/logo.png" alt="Logo" style="width:80px;" class="mb-3">
+            <h5>Michele Cervati 5°F</h5>
+            <div>
+              <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i> Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
