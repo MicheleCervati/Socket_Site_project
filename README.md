@@ -42,7 +42,7 @@ Indicazioni tecniche:
 • Eventuali file CSS, immagini e altri materiali aggiuntivi.
 
 Scadenza:
-La consegna è fissata per la settimana prossima
+La consegna è fissata per la settimana prossima.
 
 Valutazione:
 La valutazione terrà conto dei seguenti criteri:
